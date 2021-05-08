@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlockingManager : MonoBehaviour
 {
-    //criação das variaveis
+    //criação das variaveis e objetos
     public GameObject fishPrefab;
     public int numFish = 20;
     public GameObject[] allFish;
@@ -37,9 +37,11 @@ public class FlockingManager : MonoBehaviour
 
     void Update()
     {
+        goalpos = this.transform.position;
         //altera a direção em que os peixes se movem
         if (Random.Range(0, 100) < 10)
         {
+            
             goalpos = this.transform.position + new Vector3(Random.Range(-swinLimits.x, swinLimits.x),
                                                 Random.Range(-swinLimits.y, swinLimits.y),
                                                 Random.Range(-swinLimits.z, swinLimits.z));
